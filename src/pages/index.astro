@@ -5,15 +5,17 @@ import Badge from "../components/Badge.astro";
 import LinkedinIcon from "../components/icons/Linkedin.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import GmailIcon from "../components/icons/Gmail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 
 import SocialPill from "../components/SocialPill.astro";
 ---
 
 <Layout
   title="Conoce a Fran Serafini: Desarrollador BackEnd y Analista de Datos"
+  description=""
 >
   <main>
-    <section class="w-full mx-auto lg:w-[740px] py-12">
+    <SectionContainer class="py-12 pb-8">
       <h1 class="text-white text-5xl font-bold flex justify-center flex-row">
         Hola, soy Fran <a
           href="https://www.linkedin.com/in/francisco-serafini-giorgi/"
@@ -36,18 +38,18 @@ import SocialPill from "../components/SocialPill.astro";
 	  <br>
       <nav class="flex gap-x-2 mt-8 flex justify-center flex-row" >
         <SocialPill href="https://www.linkedin.com/in/francisco-serafini-giorgi/">
-          <LinkedinIcon class="w-6 h-6" />
+          <LinkedinIcon class="size-6" />
           LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/FranciscoSerafini" >
-          <GitHubIcon class="w-6 h-6" />
+          <GitHubIcon class="size-6" />
           GitHub
         </SocialPill>
         <SocialPill href="mailto:franciscoserafinigiorgi@gmail.com">
-          <GmailIcon class="w-6 h-6" />
+          <GmailIcon class="size-6" />
           Gmail
         </SocialPill>
       </nav>
-    </section>
+    </SectionContainer>
   </main>
 </Layout>
