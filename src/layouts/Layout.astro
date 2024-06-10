@@ -1,16 +1,15 @@
 ---
-// Importa los componentes necesarios
-import Header from '../components/Header.astro';
-import "@fontsource-variable/onest"
+import Header from "../components/Header.astro";
+import "@fontsource-variable/onest";
 interface Props {
-    title: string;
+  title: string;
 }
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -18,46 +17,87 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <style is:global>
-        :root {
-            color-scheme: light dark;
-        }
+      :root {
+        color-scheme: light dark;
+      }
 
-        html {
-            font-family: 'Onest Variable' system-ui, sans-serif;
-        }
+      html {
+        font-family: "Onest Variable", system-ui, sans-serif;
+      }
 
-        body {
-            background-color: #050505;
-            display: flex;
-            justify-content: center;
-            height: 100vh;
-            margin: 0; /* Agrega margin 0 para evitar espacios no deseados */
-        }
+      body {
+        background-color: #050505;
+        display: flex;
+        justify-content: center;
+        /* height: 100vh; */
+        margin: 0;
+        flex-direction: column;
+        color: white; /* Color del texto predeterminado */
+      }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            width: 100%;
-            max-width: 1120px;
-        }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+        max-width: 1120px;
+      }
 
-        nav a {
-            color: white; /* Asegúrate de que los enlaces sean visibles sobre el fondo oscuro */
-            margin-right: 1rem;
-            text-decoration: none; /* Quita el subrayado para los enlaces */
-        }
+      nav a {
+        color: white;
+        margin-right: 1rem;
+        text-decoration: none;
+      }
 
-        img {
-            border-radius: 50%;
-            width: 3rem;
-            height: 3rem;
-        }
+      img {
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+      }
+
+      main {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      main h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      main h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #888;
+      }
+
+      main p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+        color: #ccc;
+      }
+
+      .badge {
+        background-color: #007bff;
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.3rem;
+        font-size: 0.9rem;
+      }
     </style>
-</head>
-<body>
-    <Header/>
-</body>
-</html>
+  </head>
 
+  <body>
+    <div class="relative h-full w-full bg-slate-950">
+      <div
+        class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+      >
+      </div>
+	  <Header/>
+      <slot />
+    </div>
+  </body>
+</html>

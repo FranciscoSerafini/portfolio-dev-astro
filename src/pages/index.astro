@@ -1,12 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	
+  <main >
+    <section class="w-full mx-auto lg:w-[740px] py-12">
+      <h1 class="text-white text-5xl font-bold flex justify-center flex-row">
+        Hola, soy Fran <a
+          href="https://www.linkedin.com/in/francisco-serafini-giorgi/"
+          target="_blank"
+          rel="noopener"
+		  class="flex justify-center items-center"
+        >
+		<Badge>Disponible para trabajar</a>
+      </h1>
+    </section>
+    <h2 class="text-2xl opacity-80 text-wrap">Desarrollador Backend y Analista de Datos Junior</h2>
+    <p>
+      Soy un apasionado de la programación con un enfoque en el desarrollo
+      backend y el análisis de datos. Me encanta resolver problemas complejos y
+      transformar datos en información valiosa. Siempre estoy en busca de nuevas
+      oportunidades para aprender y crecer profesionalmente.
+    </p>
+  </main>
 </Layout>
-
-<style>
-	
-</style>
