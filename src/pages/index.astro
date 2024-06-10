@@ -18,7 +18,7 @@ import SocialPill from "../components/SocialPill.astro";
       --bg-pos-y: 50%;
     }
     body {
-      background: url('/path/to/your/image.jpg') no-repeat;
+      background: url("/path/to/your/image.jpg") no-repeat;
       background-size: cover;
       background-position: var(--bg-pos-x) var(--bg-pos-y);
       transition: background-position 0.1s ease;
@@ -31,11 +31,11 @@ import SocialPill from "../components/SocialPill.astro";
     }
   </style>
   <script>
-    document.addEventListener('mousemove', (event) => {
+    document.addEventListener("mousemove", (event) => {
       const x = (event.clientX / window.innerWidth) * 100;
       const y = (event.clientY / window.innerHeight) * 100;
-      document.documentElement.style.setProperty('--bg-pos-x', `${x}%`);
-      document.documentElement.style.setProperty('--bg-pos-y', `${y}%`);
+      document.documentElement.style.setProperty("--bg-pos-x", `${x}%`);
+      document.documentElement.style.setProperty("--bg-pos-y", `${y}%`);
     });
   </script>
   <main>
@@ -50,7 +50,7 @@ import SocialPill from "../components/SocialPill.astro";
           class="flex justify-center items-center"
         >
           <Badge>Disponible para trabajar</Badge>
-          <br>
+          <br />
         </a>
       </h1>
       <h2 class="text-2xl opacity-80 text-center mb-4">
@@ -63,7 +63,9 @@ import SocialPill from "../components/SocialPill.astro";
         nuevas oportunidades para aprender y crecer profesionalmente.
       </p>
       <nav class="flex justify-center gap-x-4">
-        <SocialPill href="https://www.linkedin.com/in/francisco-serafini-giorgi/">
+        <SocialPill
+          href="https://www.linkedin.com/in/francisco-serafini-giorgi/"
+        >
           <LinkedinIcon class="w-6 h-6" />
           LinkedIn
         </SocialPill>
@@ -79,13 +81,58 @@ import SocialPill from "../components/SocialPill.astro";
     </SectionContainer>
 
     <!-- Skills Section -->
-    <SectionContainer class="py-12">
-      <h3 class="section-title">Habilidades</h3>
-      <p class="section-content">
-        Aquí se listan algunas de mis habilidades principales en desarrollo backend y análisis de datos.
-      </p>
-      <!-- Añadir tus habilidades aquí -->
-    </SectionContainer>
+    <h3 class="skill-category">Frontend</h3>
+    <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
+      <div class="social-pill">HTML5</div>
+      <div class="social-pill">CSS3</div>
+      <div class="social-pill">JavaScript</div>
+    </div>
+  
+    <h3 class="skill-category mt-8">Backend</h3>
+    <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
+      <div class="social-pill">C Sharp</div>
+      <div class="social-pill">.NET</div>
+      <div class="social-pill">Django</div>
+      <div class="social-pill">FastAPI</div>
+    </div>
+  
+    <h3 class="skill-category mt-8">Data Analytics</h3>
+    <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
+      <div class="social-pill">Pandas</div>
+      <div class="social-pill">Matplotlib</div>
+    </div>
+  
+    <h3 class="skill-category mt-8">Data Base</h3>
+    <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
+      <div class="social-pill">SQL Server</div>
+      <div class="social-pill">MySQL</div>
+    </div>
+  
+    <h3 class="skill-category mt-8">Softwares and Tools</h3>
+    <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
+      <div class="social-pill">Git</div>
+      <div class="social-pill">PowerBI</div>
+    </div>
+  </SectionContainer>
+  
+  <style>
+    .social-pill {
+      background-color: #24292e;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    .social-pill:hover {
+      background-color: #0366d6; /* Color de fondo cuando se pasa el cursor */
+    }
+  
+    .skill-category {
+      font-size: 1.5rem; /* Tamaño de fuente más grande para los títulos de categoría */
+    }
+  </style>
 
     <!-- Projects Section -->
     <SectionContainer class="py-12">
@@ -96,13 +143,6 @@ import SocialPill from "../components/SocialPill.astro";
       <!-- Añadir tus proyectos aquí -->
     </SectionContainer>
 
-    <!-- Contact Section -->
-    <SectionContainer class="py-12">
-      <h3 class="section-title">Contacto</h3>
-      <p class="section-content">
-        Puedes contactarme a través de los siguientes medios.
-      </p>
-      <!-- Añadir información de contacto adicional aquí -->
-    </SectionContainer>
+    
   </main>
 </Layout>
