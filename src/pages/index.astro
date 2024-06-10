@@ -1,23 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Badge from "../components/Badge.astro";
 import LinkedinIcon from "../components/icons/Linkedin.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import GmailIcon from "../components/icons/Gmail.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-
 import SocialPill from "../components/SocialPill.astro";
 ---
 
 <Layout
   title="Conoce a Fran Serafini: Desarrollador BackEnd y Analista de Datos"
-  description=""
+  description="Portafolio de Francisco Serafini, Desarrollador BackEnd y Analista de Datos."
 >
+  <style>
+    :root {
+      --bg-pos-x: 50%;
+      --bg-pos-y: 50%;
+    }
+    body {
+      background: url('/path/to/your/image.jpg') no-repeat;
+      background-size: cover;
+      background-position: var(--bg-pos-x) var(--bg-pos-y);
+      transition: background-position 0.1s ease;
+    }
+    .section-title {
+      @apply text-white text-3xl font-bold mb-4;
+    }
+    .section-content {
+      @apply text-white text-lg opacity-80 mb-8;
+    }
+  </style>
+  <script>
+    document.addEventListener('mousemove', (event) => {
+      const x = (event.clientX / window.innerWidth) * 100;
+      const y = (event.clientY / window.innerHeight) * 100;
+      document.documentElement.style.setProperty('--bg-pos-x', `${x}%`);
+      document.documentElement.style.setProperty('--bg-pos-y', `${y}%`);
+    });
+  </script>
   <main>
-    <SectionContainer class="py-12 pb-8">
-      <h1 class="text-white text-5xl font-bold flex justify-center flex-row">
-        Hola, soy Fran <a
+    <!-- Header Section -->
+    <SectionContainer class="py-20">
+      <h1 class="text-white text-5xl font-bold text-center mb-8">
+        Hola, soy Fran
+        <a
           href="https://www.linkedin.com/in/francisco-serafini-giorgi/"
           target="_blank"
           rel="noopener"
@@ -26,30 +52,56 @@ import SocialPill from "../components/SocialPill.astro";
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h2 class="text-2xl opacity-80 text-wrap">
+      <h2 class="text-2xl opacity-80 text-center mb-4">
         Desarrollador Backend y Analista de Datos Junior
       </h2>
-      <p>
+      <p class="text-center mb-12">
         Soy un apasionado de la programación con un enfoque en el desarrollo
         backend y el análisis de datos. Me encanta resolver problemas complejos
         y transformar datos en información valiosa. Siempre estoy en busca de
         nuevas oportunidades para aprender y crecer profesionalmente.
       </p>
-	  <br>
-      <nav class="flex gap-x-2 mt-8 flex justify-center flex-row" >
+      <nav class="flex justify-center gap-x-4">
         <SocialPill href="https://www.linkedin.com/in/francisco-serafini-giorgi/">
-          <LinkedinIcon class="size-6" />
+          <LinkedinIcon class="w-6 h-6" />
           LinkedIn
         </SocialPill>
-        <SocialPill href="https://github.com/FranciscoSerafini" >
-          <GitHubIcon class="size-6" />
+        <SocialPill href="https://github.com/FranciscoSerafini">
+          <GitHubIcon class="w-6 h-6" />
           GitHub
         </SocialPill>
         <SocialPill href="mailto:franciscoserafinigiorgi@gmail.com">
-          <GmailIcon class="size-6" />
+          <GmailIcon class="w-6 h-6" />
           Gmail
         </SocialPill>
       </nav>
+    </SectionContainer>
+
+    <!-- Skills Section -->
+    <SectionContainer class="py-12">
+      <h3 class="section-title">Habilidades</h3>
+      <p class="section-content">
+        Aquí se listan algunas de mis habilidades principales en desarrollo backend y análisis de datos.
+      </p>
+      <!-- Añadir tus habilidades aquí -->
+    </SectionContainer>
+
+    <!-- Projects Section -->
+    <SectionContainer class="py-12">
+      <h3 class="section-title">Proyectos Destacados</h3>
+      <p class="section-content">
+        Una selección de proyectos en los que he trabajado.
+      </p>
+      <!-- Añadir tus proyectos aquí -->
+    </SectionContainer>
+
+    <!-- Contact Section -->
+    <SectionContainer class="py-12">
+      <h3 class="section-title">Contacto</h3>
+      <p class="section-content">
+        Puedes contactarme a través de los siguientes medios.
+      </p>
+      <!-- Añadir información de contacto adicional aquí -->
     </SectionContainer>
   </main>
 </Layout>
