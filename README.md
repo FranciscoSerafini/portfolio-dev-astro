@@ -1,6 +1,7 @@
 # Fran Serafini - Portafolio
 
 Bienvenidos a mi primer portafolio como Desarrollador BackEnd y Analista de Datos.
+
  ![Fran Serafini](./portf.png)
 
 ## Descripción
