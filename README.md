@@ -1,8 +1,10 @@
-Fran Serafini - Portafolio
-Bienvenidos a mi primer portafolio como Desarrollador BackEnd y Analista de Datos.
+<h1>Fran Serafini - Portafolio</h1>
+    <p>Bienvenidos a mi primer portafolio como Desarrollador BackEnd y Analista de Datos.</p>
 
-Descripción
-Este portafolio muestra mis habilidades en desarrollo backend y análisis de datos, así como algunos proyectos destacados. Actualmente, el portafolio está en construcción.
+    <h2>Descripción</h2>
+    <p>Este portafolio muestra mis habilidades en desarrollo backend y análisis de datos, así como algunos proyectos destacados. <strong>Actualmente, el portafolio está en construcción.</strong></p>
+
+
 
 ## 🚀 Project Structure
 
@@ -21,20 +23,18 @@ Inside of your Astro project, you'll see the following folders and files:
 │       └── index.astro
 └── package.json
 
-Instalación
-Clona el repositorio:
-bash
-Copiar código
-git clone https://github.com/tu_usuario/tu_repositorio.git
-Navega al directorio del proyecto:
-bash
-Copiar código
-cd tu_repositorio
-Instala las dependencias:
-bash
-Copiar código
-npm install
-Inicia el servidor de desarrollo:
-bash
-Copiar código
-npm start
+ <h2>Instalación</h2>
+    <ol>
+        <li>Clona el repositorio:
+            <pre><code>git clone https://github.com/tu_usuario/tu_repositorio.git</code></pre>
+        </li>
+        <li>Navega al directorio del proyecto:
+            <pre><code>cd tu_repositorio</code></pre>
+        </li>
+        <li>Instala las dependencias:
+            <pre><code>npm install</code></pre>
+        </li>
+        <li>Inicia el servidor de desarrollo:
+            <pre><code>npm start</code></pre>
+        </li>
+    </ol>
