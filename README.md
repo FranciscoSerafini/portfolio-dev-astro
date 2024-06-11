@@ -23,3 +23,5 @@ Dentro de mi proyecto Astro, verás las siguientes carpetas y archivos:
 │       └── index.astro
 └── package.json
 
+ <img height="280"  width="100%" src=https://github.com/FranciscoSerafini/portfolio-dev-astro/portf.png />
+
