@@ -3,9 +3,9 @@ import Header from "../components/Header.astro";
 import "@fontsource-variable/onest";
 interface Props {
   title: string;
-  description:string
+  description: string;
 }
-const { title,description } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,21 +19,33 @@ const { title,description } = Astro.props;
     <title>{title}</title>
     <style is:global>
       :root {
+        --bg-pos-x: 50%;
+        --bg-pos-y: 50%;
         color-scheme: light dark;
       }
 
       html {
         font-family: "Onest Variable", system-ui, sans-serif;
+        scroll-behavior: smooth;
       }
 
       body {
         background-color: #050505;
+        background: url("/path/to/your/image.jpg") no-repeat;
+        background-size: cover;
+        background-position: var(--bg-pos-x) var(--bg-pos-y);
+        transition: background-position 0.1s ease;
         display: flex;
         justify-content: center;
-        /* height: 100vh;  */
         margin: 0;
         flex-direction: column;
         color: white; /* Color del texto predeterminado */
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
       }
 
       header {
@@ -88,17 +100,51 @@ const { title,description } = Astro.props;
         border-radius: 0.3rem;
         font-size: 0.9rem;
       }
+
+      .social-pill {
+        background-color: #24292e;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .social-pill:hover {
+        background-color: #0366d6; /* Color de fondo cuando se pasa el cursor */
+      }
+
+      .skill-category {
+        font-size: 1.5rem; /* Tamaño de fuente más grande para los títulos de categoría */
+      }
+
+      .section-title {
+        @apply text-white text-3xl font-bold mb-4;
+      }
+
+      .section-content {
+        @apply text-white text-lg opacity-80 mb-8;
+      }
     </style>
   </head>
-
+  
   <body>
     <div class="relative h-full w-full bg-slate-950">
       <div
         class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
       >
       </div>
-	  <Header/>
+      <Header />
       <slot />
     </div>
+    <script>
+      document.addEventListener("mousemove", (event) => {
+        const x = (event.clientX / window.innerWidth) * 100;
+        const y = (event.clientY / window.innerHeight) * 100;
+        document.documentElement.style.setProperty("--bg-pos-x", `${x}%`);
+        document.documentElement.style.setProperty("--bg-pos-y", `${y}%`);
+      });
+    </script>
   </body>
 </html>
+

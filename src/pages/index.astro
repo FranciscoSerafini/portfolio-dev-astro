@@ -12,32 +12,6 @@ import SocialPill from "../components/SocialPill.astro";
   title="Conoce a Fran Serafini: Desarrollador BackEnd y Analista de Datos"
   description="Portafolio de Francisco Serafini, Desarrollador BackEnd y Analista de Datos."
 >
-  <style>
-    :root {
-      --bg-pos-x: 50%;
-      --bg-pos-y: 50%;
-    }
-    body {
-      background: url("/path/to/your/image.jpg") no-repeat;
-      background-size: cover;
-      background-position: var(--bg-pos-x) var(--bg-pos-y);
-      transition: background-position 0.1s ease;
-    }
-    .section-title {
-      @apply text-white text-3xl font-bold mb-4;
-    }
-    .section-content {
-      @apply text-white text-lg opacity-80 mb-8;
-    }
-  </style>
-  <script>
-    document.addEventListener("mousemove", (event) => {
-      const x = (event.clientX / window.innerWidth) * 100;
-      const y = (event.clientY / window.innerHeight) * 100;
-      document.documentElement.style.setProperty("--bg-pos-x", `${x}%`);
-      document.documentElement.style.setProperty("--bg-pos-y", `${y}%`);
-    });
-  </script>
   <main>
     <!-- Header Section -->
     <SectionContainer class="py-20">
@@ -87,7 +61,7 @@ import SocialPill from "../components/SocialPill.astro";
       <div class="social-pill">CSS3</div>
       <div class="social-pill">JavaScript</div>
     </div>
-  
+
     <h3 class="skill-category mt-8">Backend</h3>
     <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
       <div class="social-pill">C Sharp</div>
@@ -95,54 +69,40 @@ import SocialPill from "../components/SocialPill.astro";
       <div class="social-pill">Django</div>
       <div class="social-pill">FastAPI</div>
     </div>
-  
+
     <h3 class="skill-category mt-8">Data Analytics</h3>
     <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
       <div class="social-pill">Pandas</div>
       <div class="social-pill">Matplotlib</div>
     </div>
-  
+
     <h3 class="skill-category mt-8">Data Base</h3>
     <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
       <div class="social-pill">SQL Server</div>
       <div class="social-pill">MySQL</div>
     </div>
-  
+
     <h3 class="skill-category mt-8">Softwares and Tools</h3>
     <div class="flex flex-wrap justify-center items-center gap-2 mt-4">
       <div class="social-pill">Git</div>
       <div class="social-pill">PowerBI</div>
     </div>
-  </SectionContainer>
-  
-  <style>
-    .social-pill {
-      background-color: #24292e;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-  
-    .social-pill:hover {
-      background-color: #0366d6; /* Color de fondo cuando se pasa el cursor */
-    }
-  
-    .skill-category {
-      font-size: 1.5rem; /* Tamaño de fuente más grande para los títulos de categoría */
-    }
-  </style>
-
-    <!-- Projects Section -->
-    <SectionContainer class="py-12">
-      <h3 class="section-title">Proyectos Destacados</h3>
-      <p class="section-content">
-        Una selección de proyectos en los que he trabajado.
-      </p>
-      <!-- Añadir tus proyectos aquí -->
-    </SectionContainer>
-
-    
   </main>
+
+  <!-- Projects Section -->
+  <SectionContainer class="py-20" id="proyectos">
+    <h3 class="skill-category mt-8 text-center">Proyectos Destacados</h3>
+    <p class="text-center mb-12">
+      Una selección de proyectos en los que he trabajado.
+    </p>
+    <!-- Añadir tus proyectos aquí -->
+  </SectionContainer>
+
+  <SectionContainer class="py-20" id="sobremi">
+    <h3 class="skill-category mt-8 text-center">Sobre mí</h3>
+    <p class="text-center mb-12">
+      Estudiante en Colegio Universitario Siglo XXI, cursando el quinto semestre en Analista de Sistemas y Desarrollo de Software. Actualmente, estoy desarrollando mi tesis, lo que me permite profundizar aún más en mis conocimientos y habilidades en el campo.
+    </p>
+    <!-- Añadir tus proyectos aquí -->
+  </SectionContainer>
 </Layout>
